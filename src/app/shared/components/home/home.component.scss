@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .blog-cards {
+    padding: 25px;
+
+    .card {
+      width: 90%;
+      margin-left: 4%;
+      background-color: darkgray;
+
+      .title {
+        font-size: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .tags {
+        font-size: 20px;
+        margin-left: 20px;
+        margin-top: 20px;
+      }
+
+      .content {
+        font-size: 16px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .edit-btn {
+        color: blue;
+      }
+      .delete-btn {
+        color: red;
+      }
+    }
+  }
+}

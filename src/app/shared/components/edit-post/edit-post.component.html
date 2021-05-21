@@ -1,0 +1,41 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Edit Blog Post</h4>
+        <button type="button" class="close" (click)="bsModalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="postForm" (ngSubmit)="updatePost()">
+            <div class="form-group">
+                <label>Title</label>
+                <input name="title" type="text" class="form-control" placeholder="Enter title" formControlName="title">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea name="description" class="form-control" placeholder="Description" formControlName="content">
+                        </textarea>
+            </div>
+            <div class="form-group">
+                <label>Tags</label>
+                <input name="tags" type="text" class="form-control" placeholder="Tags" formControlName="tags">
+            </div>
+
+            <!-- Image Preview -->
+            <div class="form-group">
+                <div class="preview" *ngIf="preview && preview !== null">
+                    <center> <img [src]="preview" height="200px" width="200px"></center>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Add Image</label>
+                <input name="title" type="file" class="form-control" placeholder="Add Image"
+                    (change)="uploadFile($event)">
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+
+
+    </div>
+</div>

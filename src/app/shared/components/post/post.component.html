@@ -1,0 +1,29 @@
+<div class="example-container mat-elevation-z8" *ngIf="isDataLoaded">
+    <div class="example-loading-shade" *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>
+                <h2>{{post.title}}</h2>
+            </mat-card-title>
+            <mat-card-subtitle>Created at: {{post.createdAt | date}}</mat-card-subtitle>
+            <mat-card-subtitle>Tags: {{post.tags}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="http://localhost:3000/{{post.postImage}}" alt="{{post.title}}">
+        <mat-card-content>
+            <dl>
+                <dt>Post Content:</dt>
+                <dd [innerHTML]="post.content"></dd>
+            </dl>
+        </mat-card-content>
+        <mat-card-actions>
+            <a mat-flat-button color="primary" (click)="editBlog(post._id)">>
+                <mat-icon>edit</mat-icon>
+            </a>
+            <a mat-flat-button color="warn" (click)="deletePost(post._id)">
+                <mat-icon>delete</mat-icon>
+            </a>
+        </mat-card-actions>
+    </mat-card>
+</div>
